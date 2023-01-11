@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+    <title>Offer History</title>
+</head>
+<body>
+    {% include 'site_templates/banner_main.html' %}
+    <h1>Offer History</h1>
+    <h2>Open, accepted_open, rejected, completed</h2>
+
+    <h1>Previous Offers</h1>
+
+    {% if time_slots %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Time Slot</th>
+                    <th>User</th>
+                    <th>Purchase Time</th>
+                    <th>Materials</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for time_slot in time_slots %}
+                    <tr>
+                        <td>{{ time_slot.start_time }} - {{ time_slot.end_time }}</td>
+                        <td>{{ time_slot.user.name }}</td>
+                        <td>{{ time_slot.purchase_time }}</td>
+                        <td>
+                            {% if time_slot.materials %}
+                                {% for material in time_slot.materials %}
+                                    <a href="{{ material.file.url }}">{{ material.name }}</a>
+                                {% endfor %}
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No previous offers found.</p>
+    {% endif %}
+
+    {% include 'site_templates/footer_main.html' %}
+</body>
+</html>
+
+
+
+<!doctype html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% include 'site_templates/banner_main.html' %}
+    {% block content %}{% endblock %}
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Find your shit.</title>
+    </head>
+
+    <body>
+        <h1>Offer History</h1>
+        <h2>Open, accepted_open, rejected, completed</h2>
+        <p>Banner: Home, Search, About us, contacts, your profile, settings</p>
+        <p>Sidebar with categories</p>
+
+        <h1>Previous Offers</h1>
+
+        {% if time_slots %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time Slot</th>
+                        <th>User</th>
+                        <th>Purchase Time</th>
+                        <th>Materials</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for time_slot in time_slots %}
+                        <tr>
+                            <td>{{ time_slot.start_time }} - {{ time_slot.end_time }}</td>
+                            <td>{{ time_slot.user.name }}</td>
+                            <td>{{ time_slot.purchase_time }}</td>
+                            <td>
+                                {% if time_slot.materials %
+
+
+
+{% block content %}{% endblock %}
+{% include 'site_templates/footer_main.html' %}

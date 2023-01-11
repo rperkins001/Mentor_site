@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <title>Mentor Profile</title>
+</head>
+<body>
+    {% include 'site_templates/banner_main.html' %}
+    <h1>Mentor Profile</h1>
+    <p>Name: {{ mentor.name }}</p>
+    <p>Bio: {{ mentor.bio }}</p>
+
+    <h2>Offers</h2>
+    {% for offer in offers %}
+        <p>{{ offer.name }}</p>
+    {% endfor %}
+
+    <h2>Available Timeslots</h2>
+    {% for timeslot in timeslots %}
+        <p>{{ timeslot.start_time }} - {{ timeslot.end_time }}</p>
+    {% endfor %}
+
+    <h2>Reviews</h2>
+    {% for review in reviews %}
+        <p>{{ review.rating }}/5 - {{ review.comment }}</p>
+    {% endfor %}
+
+    {% include 'site_templates/footer_main.html' %}
+</body>
+</html>
+
+

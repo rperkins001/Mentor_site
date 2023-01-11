@@ -1,0 +1,15 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+    <!-- other head elements -->
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% include 'users/banner_main.html' %}
+    {% block content %}
+    {% endblock %}
+    {% include 'users/footer_main.html' %}
+</body>
+</html>

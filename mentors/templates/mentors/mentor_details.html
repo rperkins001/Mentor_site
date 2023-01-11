@@ -1,0 +1,17 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+    <h1>{{ mentor.name }}</h1>
+    <p>{{ mentor.bio }}</p>
+
+    <form method="post" action="{% url 'add_to_cart' mentor.id %}">
+        {% csrf_token %}
+        <label for="offer">Select offer:</label>
+        <select name="offer" id="offer">
+            {% for offer in mentor.offers.all %}
+                <option value="{{ offer.id }}">{{ offer.name }} - {{ offer.price }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Add to cart</button>
+    </form>
+{% endblock %}

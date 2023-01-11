@@ -1,0 +1,22 @@
+{% extends "users/base.html" %}
+
+{% block title %}Passion Projects{% endblock %}
+
+{% block content %}
+
+<!-- Passion Projects Section -->
+<div id="passion-projects">
+    <h2>Passion Projects</h2>
+    <p>Join a coalition of ongoing open source venture development or find projects to offer financial assistance.</p>
+    <ul>
+      {% for project in projects %}
+        <li>
+          <h3>{{ project.name }}</h3>
+          <p>{{ project.description }}</p>
+          <p>Members: {{ project.members }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+{% endblock %}

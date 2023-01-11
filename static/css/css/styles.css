@@ -1,0 +1,86 @@
+/* CSS styles */
+#banner {
+  width: 100%;
+  height: 100px;
+  background-color: #eee;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  /* other styles */
+}
+
+#logo {
+  float: left;
+  width: 200px;
+  height: 150px;
+  /* other styles */
+}
+
+#search-bar {
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  /* other styles */
+}
+
+#card-grid {
+  width: 90%;
+  margin: 0 auto;
+  /* other styles */
+}
+
+.card-row {
+  display: flex;
+  /* other styles */
+}
+
+.card {
+  width: 145%;  /* updated */
+  /* other styles */
+}
+
+.card img {
+  width: 22%;  /* updated */
+  height: 20px;  /* updated */
+  object-fit: cover;
+  /* other styles */
+}
+
+.card h3 {
+  margin: 10px 0;
+  /* other styles */
+}
+
+.card p {
+  font-size: 14px;
+}
+
+
+.tweet {
+  border: 1px solid black;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+
+#photo-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#photo-grid .photo {
+  flex: 0 0 50%; /* Take up 50% of the width */
+}
+
+
+#left-side-panel {
+  float: left;
+  width: 20%;
+}
+
+#main-content {
+  float: right;
+  width: 80%;
+}

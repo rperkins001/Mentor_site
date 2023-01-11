@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Create a Mentor Listing</h1>
+    <form method="post" action="{% url 'mentors:create_mentor_listing' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Create Listing</button>
+    </form>
+{% endblock %}

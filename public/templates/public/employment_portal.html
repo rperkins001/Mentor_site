@@ -1,0 +1,32 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+
+<div class="everything-card">
+<!-- Job Listings Section -->
+  <div id="job-listings">
+      <h2>Available Jobs</h2>
+      <ul>
+        {% for job in jobs %}
+          <li>
+            <h3>{{ job.title }}</h3>
+            <p>{{ job.description }}</p>
+            <p>Location: {{ job.location }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    
+    <!-- Submit Resume Section -->
+  <div id="submit-resume">
+    <h2>Submit Your Resume</h2>
+    <p>Not applying for a specific job? You can still submit your resume to be considered for future openings.</p>
+    <form method="post" action="{% url 'employment_portal' %}" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</div>
+
+{% endblock %}

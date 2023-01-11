@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <title>Mentor Utility Console</title>
+</head>
+<body>
+    {% include 'site_templates/banner_main.html' %}
+    <h1>Mentor Utility Console</h1>
+
+    <form method="post" action="{% url 'update_timeslot_format' %}">
+        {% csrf_token %}
+        <label for="timeslot_format">Preferred timeslot format:</label>
+        <select id="timeslot_format" name="timeslot_format">
+            <option value="30_minutes">30 minutes</option>
+            <option value="1_hour">1 hour</option>
+            <option value="2_hours">2 hours</option>
+            <option value="custom">Custom</option>
+        </select>
+        <input type="submit" value="Update">
+    </form>
+
+    {% include 'site_templates/footer_main.html' %}
+</body>
+</html>
+
+#################
+
+<!doctype html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% include 'site_templates/banner_main.html' %}
+    {% block content %}{% endblock %}
+</body>
+</html>
+
+{% block content %}
+<h1>Mentor Utility Console</h1>
+
+<form method="post" action="{% url 'update_timeslot_format' %}">
+    {% csrf_token %}
+    <label for="timeslot_format">Preferred timeslot format:</label>
+    <select id="timeslot_format" name="timeslot_format">
+        <option value="30_minutes">30 minutes</option>
+        <option value="1_hour">1 hour</option>
+        <option value="2_hours">2 hours</option>
+        <option value="custom">Custom</option>
+    </select>
+    <input type="submit" value="Update">
+</form>
+
+
+    {% endblock %}
+    {% include 'site_templates/footer_main.html' %}

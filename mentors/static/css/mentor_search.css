@@ -1,0 +1,34 @@
+#mentor-search-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  }
+  
+  form {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  }
+  
+  select,
+  input[type="text"] {
+  width: 60%;
+  height: 35px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  }
+  
+  input[type="submit"] {
+  width: 20%;
+  height: 40px;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  }

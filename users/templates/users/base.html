@@ -1,0 +1,24 @@
+{% load static %}
+<!doctype html>
+<html>
+    {% load static %}
+<head>
+    <!-- other head elements -->
+    <link rel="stylesheet" type="text/css" href="{% static 'banner_main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% load static %}
+    {% include 'users/banner_main.html' %}
+    <div id="left-side-panel">
+        {% include 'users/left_side_panel.html' %}
+    </div>
+    <div id="main-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    {% include 'users/footer_main.html' %}
+</body>
+</html>

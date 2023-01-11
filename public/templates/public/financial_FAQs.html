@@ -1,0 +1,15 @@
+<!-- financial_faqs.html -->
+
+{% extends "users/base.html" %}
+
+{% block title %}Financial FAQs{% endblock %}
+
+{% block content %}
+<div class="everything-card">
+    <h1>Financial FAQs</h1>
+    {% for faq in faqs %}
+        <h2>{{ faq.question }}</h2>
+        <p>{{ faq.answer }}</p>
+    {% endfor %}
+</div>
+{% endblock %}

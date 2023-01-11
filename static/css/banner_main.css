@@ -1,0 +1,43 @@
+
+  #banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+  }
+  #banner a {
+    text-decoration: none;
+    color: darkblue;
+  }
+  #banner form {
+    display: flex;
+    align-items: center;
+  }
+  #banner input[type="text"] {
+    width: 75%;
+    height: 100%;
+    border: 1px solid white;
+    outline: 1px solid black;
+    padding: 0 200px;
+    }
+  #banner button[type="submit"] {
+    width: 25%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: grey;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  #links-banner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 25px;
+    background-image: linear-gradient(to bottom, white, lightgrey);
+  }
+  #links-banner a {
+    text-decoration: none;
+    color: verydarkgrey;
+  }

@@ -1,0 +1,32 @@
+<!-- templates/cart.html -->
+
+{% extends 'users/base.html' %}
+
+{% block content %}
+    <h1>Shopping Cart</h1>
+
+    <table>
+        <tr>
+            <th>Offer</th>
+            <th>Price</th>
+        </tr>
+        {% for offer_id in cart %}
+            {% offer = Offer.objects.get(id=offer_id) %}
+            <tr>
+                <td>{{ offer.name }}</td>
+                <td>{{ offer.price }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <form method="post" action="{% url 'checkout' %}">
+        {% csrf_token %}
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+        <br>
+        <label for="credit_card_number">Credit card number:</label>
+        <input type="text" name="credit_card_number" id="credit_card_number" required>
+        <br>
+        <button type="submit">Checkout</button>
+    </form>
+{% endblock %}

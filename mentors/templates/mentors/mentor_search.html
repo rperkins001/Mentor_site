@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+{% load static %}
+<head>
+
+</head>
+<body>
+  <div id="card">
+    <h1>Mentor Search</h1>
+    <form method="GET" action="{% url 'mentor_search' %}">
+        <label for="industry">Industry:</label>
+        <select name="industry" id="industry">
+            <option value="">-- Select industry --</option>
+            <option value="Technology">Technology</option>
+            <option value="Finance">Finance</option>
+            <option value="Marketing">Marketing</option>
+            <!-- Add more options here -->
+        </select>
+        <br>
+        <label for="location">Location:</label>
+        <input type="text" name="location" id="location" value="{{ request.GET.location }}">
+        <br>
+        <input type="submit" value="Search">
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+{% extends "users/base.html" %}
+
+{% block title %}Your Offer History{% endblock %}
+
+{% block content %}
+    <h1>Your Offer History</h1>
+    <h2>PitchResults</h2>
+    <p>Banner: Home, Search, About us, contacts, your profile, settings</p>
+    <p>Sidebar with categories</p>
+    <p>Offering Receipts</p>
+
+    <h1>Previous Purchases</h1>
+    {% if time_slots %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Mentor</th>
+                    <th>Time Slot</th>
+                    <th>Purchase Time</th>
+                    <th>Materials</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for time_slot in time_slots %}
+                    <tr>
+                        <td>{{ time_slot.mentor.name }}</td>
+                        <td>{{ time_slot.start_time }} - {{ time_slot.end_time }}</td>
+                        <td>{{ time_slot.purchase_time }}</td>
+                        <td>
+                            {% if time_slot.materials %}
+                                {% for material in time_slot.materials %}
+                                    {{ material }}<br>
+                                {% endfor %}
+                            {% else %}
+                                No materials
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>You have no previous purchases.</p>
+    {% endif %}
+{% endblock %}
+
+###########################
+
+
+<!doctype html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% include 'site_templates/banner_main.html' %}
+    {% block content %}{% endblock %}
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>What you tried.</title>
+    </head>
+
+    <body>
+        <h1>Your offer history</h1>
+        <h2>PitchResults</h2>
+        <p>Banner: Home, Search, About us, contacts, your profile, settings</p>
+        <p>Sidebar with categories</p>
+        <p>Offering Receipts</p>
+
+        <h1>Previous Purchases</h1>
+
+        {% if time_slots %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mentor</th>
+                        <th>Time Slot</th>
+                        <th>Purchase Time</th>
+                        <th>Materials</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for time_slot in time_slots %}
+                        <tr>
+                            <td>{{ time_slot.mentor.name }}</td>
+                            <td>{{ time_slot.start_time }} - {{ time_slot.end_time }}</td>
+                            <td>{{ time_slot.purchase_time }}</td>
+                            <td>
+                                {% if time_slot.materials %}
+                                    {% for material in time_slot.materials %}
+                                        {{ material }}<br>
+                                    {% endfor %}
+                                {% else %}
+                                    No materials
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>You have no previous purchases.</p>
+        {% endif %}
+    </body>

@@ -1,0 +1,183 @@
+/* CSS styles */
+#banner {
+  width: 100%;
+  height: 100px;
+  background-color: #eee;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  /* other styles */
+}
+
+#logo {
+  float: left;
+  width: 200px;
+  height: 150px;
+  /* other styles */
+}
+
+#search-bar {
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  /* other styles */
+}
+
+#card-grid {
+  width: 90%;
+  margin: 0 auto;
+  /* other styles */
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  grid-gap: 20px;
+}
+
+.card-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+
+.card {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+.card img {
+  width: 100%;  /* updated */
+  height: 100px;  /* updated */
+  object-fit: cover;
+  /* other styles */
+}
+
+.card h3 {
+  margin: 10px 0;
+  /* other styles */
+}
+
+.card p {
+  font-size: 14px;
+}
+
+
+.tweet {
+  border: 1px solid black;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+
+#photo-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#photo-grid .photo {
+  flex: 0 0 50%; /* Take up 50% of the width */
+}
+
+
+#left-side-panel {
+  float: left;
+  width: 20%;
+  
+}
+
+
+.about-us-card {
+  width: 50%; /* or any other value you want */
+  margin: 0 auto; /* center the card on the page */
+  padding: 20px; /* add some padding around the content */
+  border: 1px solid #ccc; /* add a border around the card */
+}
+
+.public-pitch-card {
+  width: 50%; /* or any other value you want */
+  margin: 0 auto; /* center the card on the page */
+  padding: 20px; /* add some padding around the content */
+  border: 1px solid #ccc; /* add a border around the card */
+}
+
+.everything-card {
+  width: 50%; /* or any other value you want */
+  margin: 0 auto; /* center the card on the page */
+  padding: 20px; /* add some padding around the content */
+  border: 1px solid #ccc; /* add a border around the card */
+}
+
+#photo-grid-main-content {
+  float: right;
+  width: 80%;
+}
+
+
+#banner b{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+#banner a {
+  text-decoration: none;
+  color: darkblue;
+}
+#banner form {
+  display: flex;
+  align-items: center;
+}
+#banner input[type="text"] {
+  width: 75%;
+  height: 100%;
+  border: 1px solid white;
+  outline: 1px solid black;
+  padding: 0 200px;
+  }
+#banner button[type="submit"] {
+  width: 25%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: grey;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+#links-banner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 25px;
+  background-image: linear-gradient(to bottom, white, lightgrey);
+}
+#links-banner a {
+  text-decoration: none;
+  color: verydarkgrey;
+}
+
+
+#mentor-search-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+}
+
+form {
+  width: 50%;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}

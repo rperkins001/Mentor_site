@@ -1,0 +1,26 @@
+{% extends "users/base.html" %}
+
+{% block title %}Arbitration{% endblock %}
+
+{% block content %}
+<div class="everything-card">
+
+	<head>
+		<title>Arbitration</title>
+	</head>
+	<body>
+		<h1>Arbitration</h1>
+		<p>Welcome to the arbitration page. If you have a dispute that you would like to have resolved through arbitration, please review the following information carefully.</p>
+		<h2>Site Policy</h2>
+		<p>Before submitting a request for arbitration, please review our <a href="{% url 'site_policy' %}">site policy</a>
+			to ensure that your dispute falls within the scope of issues that can be resolved through this process.</p>
+		<h2>Submitting a Request</h2>
+		<p>To submit a request for arbitration, please follow the appropriate format and provide all necessary information as outlined in our site policy. Failure to do so may result in your request being denied.</p>
+		<h2>Responding to a Request</h2>
+		<p>If you have received a request for arbitration, please review it carefully and follow the appropriate format for responding. Be sure to provide all necessary information and any relevant supporting documentation.</p>
+		<h2>Judging the Merits of a Dispute</h2>
+		<p>Our arbitration panel will carefully review all information provided by both parties and make a determination based on the merits of the case. In making this determination, we will consider whether either party has violated any provisions outlined in our site policy.</p>
+	</body>
+	</html>
+</div>
+{% endblock %} 

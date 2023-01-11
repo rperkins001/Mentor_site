@@ -1,0 +1,20 @@
+
+{% load static %}
+
+<div id="card-grid">
+  <div class="card-row">
+    {% for image in image_list|slice:":3" %}
+      <div class="card">
+        <img src="{% static image %}" alt="Card image">
+      </div>
+    {% endfor %}
+  </div>
+  <div class="card-row">
+    {% for image in image_list|slice:"3:" %}
+      <div class="card">
+        <img src="{% static image %}" alt="Card image">
+      </div>
+    {% endfor %}
+  </div>
+</div>
+  

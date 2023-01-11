@@ -1,0 +1,26 @@
+{% extends "users/base.html" %}
+
+{% block title %}Purchase Confirmation{% endblock %}
+
+{% block content %}
+    h1>Search Page</h1>
+    <h2>PitchYourPlug</h2>
+    <p>Banner: Home, Search, About us, contacts, your profile, settings</p>
+    <p>Sidebar with categories</p>
+
+    <h1>Purchase Confirma<tion</h1>
+
+    <p>Thank you for purchasing a mentor time slot!</p>
+    <p>Time of purchase: {{ time_slot.purchase_time }}</p>
+    {% if time_slot.materials %}
+        <p>Materials:</p>
+        <ul>
+            {% for material in time_slot.materials %}
+                <li>{{ material }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No materials were uploaded for this time slot.</p>
+    {% endif %}
+{% endblock %}
+

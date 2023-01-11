@@ -1,0 +1,23 @@
+<div id="left-side-panel">
+    <h3>Industries</h3>
+    <ul>
+        <li><a href="{% url 'homepage' %}">homepage</a></li>
+        <li><a href="{% url 'homepage' %}">homepage</a></li>
+        <li><a href="{% url 'homepage' %}">homepage</a></li>
+    </ul>
+    {% if user.is_authenticated %}
+        <h3>Profile</h3>
+        <ul>
+            <li><a href="{% url 'profile_settings' id=user.id%}">Settings</a></li>
+        </ul>
+        
+
+    {% endif %}
+    <h4>Passion Projects</h4>
+    <ul>
+        <li><a href="{% url 'public_pitches' %}">Explore Public Pitches</a></li>
+    </ul>
+    <h3>
+    <a href="{% url 'logout' %}">Logout</a>
+    </h3>
+</div>

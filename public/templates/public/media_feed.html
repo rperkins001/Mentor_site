@@ -1,0 +1,26 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block content %}
+    
+    <div class="everything-card">
+        <h1>Media Feed</h1>
+        <p>Our media feed is a highly-anticipated feature on our website. It will allow users to stay up-to-date with all the latest news and happenings in their industry.
+
+            One of the key components of our media feed is the integration of our Twitter account. This will allow users to see all of our tweets in one convenient location, without the need to constantly check their Twitter feed.</p>
+            
+        <p>In addition to Twitter, we will also have a live feed featuring the latest news and updates from a variety of sources. This will allow users to stay informed about the latest developments in their field, and make it easier for them to stay on top of industry trends.
+            
+            But it's not just about staying informed. The media feed will also provide an excellent opportunity for corporate users to showcase their brand and engage with their audience. By sharing their own content and updates through the media feed, they can build their reputation and establish themselves as thought leaders in their industry.
+            
+            Overall, the media feed is a powerful tool that will help users stay connected and informed, while also providing an excellent platform for corporate users to engage with their audience. We can't wait for everyone to see it in action!</p>
+
+        {% for tweet in tweets %}
+            <div class="tweet">
+                <p>{{ tweet.text }}</p>
+                <p>Posted by: {{ tweet.user.name }}</p>
+                <p>Date: {{ tweet.created_at }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

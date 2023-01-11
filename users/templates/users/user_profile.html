@@ -1,0 +1,46 @@
+!-- users/profile.html -->
+{% extends "users/base.html" %}
+{% load static %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+{% csrf_token %}
+
+<h1>{{ profile.first_name }}'s Profile</h1>
+<div>
+    {% if profile.profile_photo %}
+        <img src="{{ profile.profile_photo.url }}" alt="Profile photo">
+    {% else %}
+        <img src="{% static 'images/default-profile-photo.jpg' %}" alt="Default profile photo">
+    {% endif %}
+</div>
+
+<form action="{% url 'profile_settings' id=user.id %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="profile_photo">
+    <input type="submit" value="Update Profile Photo">
+</form>
+
+<h2>Upload a profile photo</h2>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="profile_photo">
+    <button type="submit">Upload</button>
+</form>
+
+<h2>Bio</h2>
+<form method="POST">
+    {% csrf_token %}
+    <textarea name="bio">{{ user.bio }}</textarea>
+    <button type="submit">Save</button>
+</form>
+
+<h2>Recent Activity</h2>
+{% for activity in activities %}
+    <div class="activity">
+        <p>{{ activity.description }}</p>
+        <p>Date: {{ activity.date }}</p>
+    </div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,64 @@
+<style>
+  #banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+  }
+  #banner a {
+    text-decoration: none;
+    color: darkblue;
+  }
+  #banner form {
+    display: flex;
+    align-items: center;
+  }
+  #banner input[type="text"] {
+    width: 75%;
+    height: 100%;
+    border: 1px solid white;
+    outline: 1px solid black;
+    padding: 0 200px;
+    }
+  #banner button[type="submit"] {
+    width: 25%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: grey;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  #links-banner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 25px;
+    background-image: linear-gradient(to bottom, white, lightgrey);
+  }
+  #links-banner a {
+    text-decoration: none;
+    color: verydarkgrey;
+  }
+</style>
+
+<div id="banner">
+  <a href="#">Logo</a>
+  <form method="get" action="{% url 'search' %}">
+    <input type="text" name="q" placeholder="Search Mentors by location:"
+    <button type="submit">Go</button>
+  </form>
+</div>
+<div id="links-banner">
+  <a href="{% url 'homepage' %}">Home</a>
+  <a href="{% url 'media_feed' %}">Media Feed</a>
+  <a href="{% url 'passion_projects' %}">Passion Projects</a>
+  <a href="{% url 'about_us' %}">About Us</a>
+  <a href="{% url 'profile_settings' %}">Settings</a>
+  {% if request.user.is_authenticated %}
+    <a href="{% url 'user_profile' %}">Your Profile</a>
+  {% else %}
+    <a href="{% url 'login' %}">Login</a> / <a href="{% url 'signup' %}">Sign Up</a>
+  {% endif %}
+</div>

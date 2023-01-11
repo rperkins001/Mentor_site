@@ -1,0 +1,41 @@
+{% extends "users/base.html" %}
+
+{% block title %}Purchase History{% endblock %}
+
+{% block content %}
+    <h1>Purchase HIST</h1>
+    
+
+    {% if time_slots %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Mentor</th>
+                    <th>Time Slot</th>
+                    <th>Purchase Time</th>
+                    <th>Materials</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for time_slot in time_slots %}
+                    <tr>
+                        <td>{{ time_slot.mentor.name }}</td>
+                        <td>{{ time_slot.start_time }} - {{ time_slot.end_time }}</td>
+                        <td>{{ time_slot.purchase_time }}</td>
+                        <td>
+                            {% if time_slot.materials %}
+                                {% for material in time_slot.materials %}
+                                    {{ material }}<br>
+                                {% endfor %}
+                            {% else %}
+                                No materials
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>You have no purchase history.</p>
+    {% endif %}
+{% endblock %}

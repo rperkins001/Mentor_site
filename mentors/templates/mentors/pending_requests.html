@@ -1,0 +1,28 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+    <h1>Pending Mentor Requests</h1>
+    {% if mentor_requests %}
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>Reason for Request</th>
+                <th>Qualifications</th>
+                <th>Actions</th>
+            </tr>
+            {% for request in mentor_requests %}
+                <tr>
+                    <td>{{ request.user.username }}</td>
+                    <td>{{ request.reason_for_request }}</td>
+                    <td>{{ request.qualifications }}</td>
+                    <td>
+                        <a href="{% url 'mentors:approve_request' request.id %}" class="btn btn-success">Approve</a>
+                        <a href="{% url 'mentors:reject_request' request.id %}" class="btn btn-danger">Reject</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No pending mentor requests.</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,18 @@
+<div id="left-side-panel">
+    <h3>Industries</h3>
+    <ul>
+        <li>Industry 1</li>
+        <li>Industry 2</li>
+        <li>Industry 3</li>
+    </ul>
+    {% if user.is_authenticated %}
+        <h3>Profile</h3>
+        <ul>
+            <li><a href="{% url 'profile_settings' %}">Settings</a></li>
+        </ul>
+    {% endif %}
+    <h3>Passion Projects</h3>
+    <ul>
+        <li><a href="{% url 'passion_projects' %}">Explore Passion Projects</a></li>
+    </ul>
+</div>

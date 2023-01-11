@@ -1,0 +1,58 @@
+/* CSS styles */
+#banner {
+  width: 100%;
+  height: 100px;
+  background-color: #eee;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  /* other styles */
+}
+
+#logo {
+  float: left;
+  width: 200px;
+  height: 150px;
+  /* other styles */
+}
+
+#search-bar {
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  /* other styles */
+}
+
+#card-grid {
+  width: 90%;
+  margin: 0 auto;
+  /* other styles */
+}
+
+.card-row {
+  display: flex;
+  /* other styles */
+}
+
+.card {
+  width: 30%;  /* updated */
+  /* other styles */
+}
+
+.card img {
+  width: 100%;  /* updated */
+  height: 100px;  /* updated */
+  object-fit: cover;
+  /* other styles */
+}
+
+.card h3 {
+  margin: 10px 0;
+  /* other styles */
+}
+
+.card p {
+  font-size: 14px;
+}
